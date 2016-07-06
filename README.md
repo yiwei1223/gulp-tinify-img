@@ -1,6 +1,11 @@
 # gulp-tinify-img
 A gulp plugin dependencies tinify to compressed your jpeg or png
 
+# Install
+Install with npm
+	
+	npm install --save-dev gulp-tinify-img
+
 #API
 
 	gulpTinifyImg({tinify_key: 'xxx', log: true})
@@ -14,22 +19,12 @@ A gulp plugin dependencies tinify to compressed your jpeg or png
 #Useage
 
 	var gulp = require('gulp'),
-		gulpLoadPlugins = require('gulp-load-plugins'),
-    	runSequence=require('run-sequence'),
     	gulpTinifyImg = require('gulp-tinify-img'),
-    	plugins = gulpLoadPlugins(),
-    	config={
-        	src:'./img',
-        	dest:'./dist'
-    	};
-    	
-    gulp.task('compress_img', function () {
-    	gulp.src([path.join(config.src, '*.{png, jpeg}')], {})
-        .pipe(gulpTinifyImg({tinify_key: 'xxxx', log: true}))
-        .pipe(gulp.dest(config.dest));
-        
-    gulp.task('release',function(){
-    	runSequence('compress_img');
-	});     
+    	gulp.task('tinify-img', function () {
+    		gulp.src([path.join(config.src, '*.{png, jpeg}')], {})
+        		.pipe(gulpTinifyImg({tinify_key: 'xxxx', log: true}))
+        		.pipe(gulp.dest(config.dest))
+        )};
+         
 #Last
 if you have some prombles when use,you can open an issue to me!!!
