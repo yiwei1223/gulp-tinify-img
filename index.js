@@ -61,6 +61,7 @@ module.exports = function (options) {
                 }
                 file.contents = resultData;
                 if (options.log) console.log('-------------- ', PLUGIN_NAME, '：the ', count ,' image end compressed -----------------');
+                if (options.log) console.log('-------------- compression count : ' + tinify.compressionCount + ' --------------');
                 // 确保文件进入下一个 gulp 插件
                 that.push(file);
                 // 告诉 stream 引擎，我们已经处理完了这个文件
